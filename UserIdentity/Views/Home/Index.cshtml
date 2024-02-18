@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+
+<center>
+    <h2>Home</h2>
+</center>
+
+<hr />
+
+@if (User.Identity.IsAuthenticated)
+{
+    <label class="label label-info">
+        @User.Identity.Name
+    </label>
+    <a href="/Account/Logout " class="btn btn-danger">Logout</a>
+}
+else
+{
+    <a href="/Account/Login" class="btn btn-success">Login</a>
+    <a href="/Account/Register" class="btn btn-primary">Register</a>
+
+}
+
+
